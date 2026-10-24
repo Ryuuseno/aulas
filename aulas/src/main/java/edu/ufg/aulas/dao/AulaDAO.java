@@ -1,5 +1,6 @@
 package edu.ufg.aulas.dao;
 
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import edu.ufg.aulas.entidades.Aula;
@@ -29,6 +30,11 @@ public class AulaDAO {
                 tx.rollback();
                 throw e;
             }
+        }
+    }
+    public List<Aula> listar() {
+        try (Session sesion = HibernateUtil.getSessionFactory().openSession()) {
+            return sesion.createQuery("from Aula a order by a.edificio, a.nombre", Aula.class).list();
         }
     }
 }
