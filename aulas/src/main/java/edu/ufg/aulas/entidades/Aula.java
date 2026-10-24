@@ -61,4 +61,8 @@ public class Aula {
     public void setResponsable(String responsable) { this.responsable = responsable; }
     public EstadoAula getEstado() { return estado; }
     public void setEstado(EstadoAula estado) { this.estado = estado; }
+    @Override
+    public String toString() {
+        return nombre + " (" + edificio + ")";
+    }    
 }
