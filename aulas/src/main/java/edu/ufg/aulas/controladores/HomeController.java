@@ -57,7 +57,7 @@ public class HomeController {
 
         if (nombre.isEmpty() || edificio.isEmpty() || capacidadTexto.isEmpty()
                 || responsable.isEmpty() || planta == null || tipo == null || estado == null) {
-            mostrarError("Ningún campo puede quedar vacío.");
+            mostrarError("Complete todos los campos antes de guardar.");
             return;
         }
 
@@ -65,7 +65,7 @@ public class HomeController {
         try {
             capacidad = Integer.parseInt(capacidadTexto);
         } catch (NumberFormatException e) {
-            mostrarError("La capacidad debe ser un número entero.");
+            mostrarError("La capacidad debe ser un número entero, por ejemplo 30.");
             return;
         }
 
@@ -76,7 +76,7 @@ public class HomeController {
 
         try {
             if (aulaDAO.existe(nombre, edificio)) {
-                mostrarError("Ya existe un aula con ese nombre en ese edificio.");
+                mostrarError("El aula " + nombre + " ya está registrada en el edificio " + edificio + ".");
                 return;
             }
 
@@ -92,7 +92,7 @@ public class HomeController {
 
             limpiarCampos();
             lblMensaje.setStyle("-fx-text-fill: green;");
-            lblMensaje.setText("Aula guardada correctamente.");
+            lblMensaje.setText("Aula " + nombre + " guardada correctamente.");
         } catch (Exception e) {
             mostrarError("No se pudo guardar el aula en la base de datos.");
             e.printStackTrace();
