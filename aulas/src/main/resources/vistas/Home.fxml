@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" spacing="15.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ufg.aulas.controladores.HomeController">
+<VBox alignment="TOP_CENTER" spacing="15.0" prefWidth="520.0" style="-fx-background-color: #f4f6f8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ufg.aulas.controladores.HomeController">
     <padding>
         <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
     </padding>
     <children>
         <Label fx:id="lblBienvenida" text="Bienvenido" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
-        <Label text="Registro de aulas" style="-fx-font-size: 14px;" />
+        <Label text="Registro de aulas - Universidad Francisco Gavidia" style="-fx-font-size: 14px; -fx-text-fill: #555555;" />
         <GridPane hgap="10.0" vgap="10.0">
             <children>
                 <Label text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="0" />
@@ -37,7 +37,7 @@
         </GridPane>
         <HBox alignment="CENTER" spacing="15.0">
             <children>
-                <Button onAction="#guardar" text="Guardar" defaultButton="true" />
+                <Button onAction="#guardar" text="Guardar" defaultButton="true" style="-fx-background-color: #2e7d32; -fx-text-fill: white;" />
                 <Button onAction="#limpiar" text="Limpiar" />
             </children>
         </HBox>
