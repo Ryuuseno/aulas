@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" spacing="15.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="${package}.controladores.HomeController">
+    <padding>
+        <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+    </padding>
+    <children>
+        <Label fx:id="lblBienvenida" text="Bienvenido" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        <Label text="Registro de aulas" style="-fx-font-size: 14px;" />
+        <GridPane hgap="10.0" vgap="10.0">
+            <children>
+                <Label text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="txtNombre" promptText="Ej. B-204" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Edificio" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="txtEdificio" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Planta" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <ComboBox fx:id="cmbPlanta" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Capacidad" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="txtCapacidad" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Tipo de aula" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <ComboBox fx:id="cmbTipoAula" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Responsable" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="txtResponsable" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="Estado" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <ComboBox fx:id="cmbEstado" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            </children>
+        </GridPane>
+        <HBox alignment="CENTER" spacing="15.0">
+            <children>
+                <Button onAction="${symbol_pound}guardar" text="Guardar" defaultButton="true" />
+                <Button onAction="${symbol_pound}limpiar" text="Limpiar" />
+            </children>
+        </HBox>
+        <Label fx:id="lblMensaje" wrapText="true" />
+        <Hyperlink onAction="${symbol_pound}cerrarSesion" text="Cerrar sesión" />
+    </children>
+</VBox>
